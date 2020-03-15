@@ -76,7 +76,7 @@ for (let q=0;q<500;q++){
     Grid[Math.floor(Math.random()*100)][Math.floor(Math.random()*50)+150] = 1
 }
 
-for (let q=0;q<500;q++){
+for (let q=0;q<300;q++){
 
     Grid[Math.floor(Math.random()*50)+150][Math.floor(Math.random()*100)+25] = 1
 }
