@@ -13,7 +13,7 @@ function Resize(){
     if (canvas.width>canvas.height){
         Q = canvas.width/200
     }else{
-        Q = canvas.width/200
+        Q = canvas.height/200
     }
  
 }
@@ -49,7 +49,7 @@ for (let i=0;i<100;i++){
 
 var Grid = []
 
-for (let i=0;i<150;i++){
+for (let i=0;i<200;i++){
 
     var row = []
 
@@ -74,6 +74,11 @@ for (let q=0;q<300;q++){
 for (let q=0;q<500;q++){
 
     Grid[Math.floor(Math.random()*100)][Math.floor(Math.random()*50)+150] = 1
+}
+
+for (let q=0;q<500;q++){
+
+    Grid[Math.floor(Math.random()*50)+150][Math.floor(Math.random()*100)+25] = 1
 }
 
 
