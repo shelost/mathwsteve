@@ -10,7 +10,12 @@ function Resize(){
     canvas.height = window.innerHeight
     CX = canvas.width/2
     CY = canvas.height/2
-    Q = canvas.width/200
+    if (canvas.width>canvas.height){
+        Q = canvas.width/200
+    }else{
+        Q = canvas.width/200
+    }
+ 
 }
 
 Resize()
@@ -56,17 +61,17 @@ for (let i=0;i<150;i++){
 }
 
 
-for (let q=0;q<400;q++){
+for (let q=0;q<500;q++){
 
     Grid[Math.floor(Math.random()*60)+20][Math.floor(Math.random()*100)+50] = 1
 }
 
-for (let q=0;q<200;q++){
+for (let q=0;q<300;q++){
 
     Grid[Math.floor(Math.random()*60)+40][Math.floor(Math.random()*50)] = 1
 }
 
-for (let q=0;q<400;q++){
+for (let q=0;q<500;q++){
 
     Grid[Math.floor(Math.random()*100)][Math.floor(Math.random()*50)+150] = 1
 }
@@ -150,7 +155,7 @@ const loop = () => {
     Resize()
 
 
-    ctx.fillStyle = 'white'
+    ctx.fillStyle = '#A0A0A0'
     ctx.fillRect(0,0,canvas.width, canvas.height)
 
     for (let i=0;i<Grid.length;i++){
