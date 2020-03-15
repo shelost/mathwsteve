@@ -150,7 +150,7 @@ const loop = () => {
     Resize()
 
 
-    ctx.fillStyle = '#A0A0A0'
+    ctx.fillStyle = 'white'
     ctx.fillRect(0,0,canvas.width, canvas.height)
 
     for (let i=0;i<Grid.length;i++){
