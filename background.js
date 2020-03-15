@@ -56,7 +56,7 @@ for (let i=0;i<150;i++){
 }
 
 
-for (let q=0;q<600;q++){
+for (let q=0;q<500;q++){
 
     Grid[Math.floor(Math.random()*60)+20][Math.floor(Math.random()*100)+50] = 1
 }
@@ -150,7 +150,7 @@ const loop = () => {
     Resize()
 
 
-    ctx.fillStyle = '#202020'
+    ctx.fillStyle = '#A0A0A0'
     ctx.fillRect(0,0,canvas.width, canvas.height)
 
     for (let i=0;i<Grid.length;i++){
