@@ -61,28 +61,14 @@ for (let i=0;i<200;i++){
 }
 
 
-for (let q=0;q<500;q++){
+for (let q=0;q<4000;q++){
 
-    Grid[Math.floor(Math.random()*60)+20][Math.floor(Math.random()*100)+50] = 1
-}
-
-for (let q=0;q<300;q++){
-
-    Grid[Math.floor(Math.random()*60)+40][Math.floor(Math.random()*50)] = 1
-}
-
-for (let q=0;q<500;q++){
-
-    Grid[Math.floor(Math.random()*100)][Math.floor(Math.random()*50)+150] = 1
-}
-
-for (let q=0;q<300;q++){
-
-    Grid[Math.floor(Math.random()*50)+150][Math.floor(Math.random()*100)+25] = 1
+    Grid[Math.floor(Math.random()*200)][Math.floor(Math.random()*200)] = 1
 }
 
 
 
+/*
 function Conway(){
 
     console.log('got it')
@@ -151,6 +137,86 @@ function Conway(){
         }
 
     }
+}
+*/
+
+function Conway(){
+    var newGrid = []
+    for (let i=0;i<200;i++){
+
+        var row = []
+    
+        for (let j=0;j<200;j++){
+            row.push(0)
+        }
+    
+        newGrid.push(row)
+    }
+    for (let i=0;i<Grid.length;i++){
+
+        for (let j=0;j<Grid[0].length;j++){
+
+            //var Count = [false, false, false, false, false, false, false, false]
+            var Count = 0
+            // Check Conditions
+
+            
+            if (i < Grid.length-1 && i>0){
+
+               if (Grid[i+1][j] == 1) {  Count++  }
+               if (Grid[i-1][j] == 1) {  Count++  }
+            }
+
+            if (j < Grid[0].length-1 && j>0){
+
+                if (Grid[i][j+1] == 1) {  Count++  }
+                if (Grid[i][j-1] == 1) {  Count++  }
+             }
+
+             if (i>0 && j>0){
+                if (Grid[i-1][j-1] == 1) {  Count++  }
+             }
+
+             if (i>0 && j<Grid[0].length){
+                if (Grid[i-1][j+1] == 1) {  Count++  }
+             }
+
+             if (i<Grid.length-1 && j>0){
+                if (Grid[i+1][j-1] == 1) {  Count++  }
+             }
+
+             if (i<Grid.length-1 && j<Grid[0].length){
+                if (Grid[i+1][j+1] == 1) {  Count++  }
+             }
+
+             var Neighbors = []
+           for (var tele = 0; tele < Count; tele++){
+               Neighbors.push(0)
+           }
+
+
+           if (Grid[i][j] == 1){
+
+                if (Neighbors.length > 1 &&
+                    Neighbors.length < 4){
+
+                    newGrid[i][j] = 1
+                    }
+           }
+
+           if (Grid[i][j] == 0){
+
+                if (Neighbors.length == 3){
+
+                    newGrid[i][j] = 1
+                }
+
+
+            }
+        }
+
+    }
+    Grid = newGrid.copyWithin()
 }
 
 
